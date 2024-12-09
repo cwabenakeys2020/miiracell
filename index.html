@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miira Cell Plus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+        .product-details {
+            text-align: center;
+        }
+        .price {
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .order-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        .phone-number {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        .phone-number a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .phone-number a:hover {
+            text-decoration: underline;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 600px; /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .price {
+                font-size: 20px;
+            }
+            .order-button {
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Miira Cell</h1>
+    </div>
+
+    <div class="container">
+        <img src="https://pictures-nigeria.jijistatic.net/100840134_NjIwLTQ2NS05YzJhZTQ1MjI3.webp" alt="Product Image" class="product-image">
+        
+        <div class="product-details">
+            <h2>Product Description</h2>
+            <p>
+                Miira Cell Plus is a supplement that restores the body to its natural state. The benefits of Miira-Cell plus are seemingly endless with it being able to restore the human body back to normalcy without having adverse effects on your health            </p>
+            <div class="price">
+                Price: ₵450.00
+            </div>
+            <button id="orderBtn" class="order-button">Order Now</button>
+        </div>
+
+        <div class="phone-number">
+            Prefer to order by phone? Call us at <a href="tel:+1234567890">(233) 549319970</a>
+        </div>
+    </div>
+
+<!-- The Modal -->
+    <div id="orderModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <!-- Embed Google Form Here -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdKs-Q8tsDapFXPUWT2v0eS9c30GbeiU8L9xL3OOWc4HanMMw/viewform" 
+                    width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+                Loading…
+            </iframe>
+        </div>
+
+    </div>
+
+    <script>
+        // Get modal element
+        var modal = document.getElementById("orderModal");
+
+        // Get button that opens the modal
+        var btn = document.getElementById("orderBtn");
+
+        // Get the <a> element that closes the modal
+        var closeBtn = document.querySelector(".close");
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+            // Scroll to top of the modal
+            window.scrollTo(0, 0);
+        }
+
+        // When the user clicks on <a> (x), close the modal
+        closeBtn.onclick = function(event) {
+            event.preventDefault();
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal content, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
